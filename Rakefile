@@ -11,7 +11,7 @@ end
 
 MetricFu::Configuration.run do |config|
   config.roodi    = config.roodi.merge(:roodi_config => 'config/roodi_config.yml')
-  config.churn    = { :start_date => "1 year ago", :minimum_churn_count => 10}
+  #config.churn    = { :start_date => "1 year ago", :minimum_churn_count => 10}
   config.hotspots = { :start_date => "1 year ago", :minimum_churn_count => 10}
 end
 

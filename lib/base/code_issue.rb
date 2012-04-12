@@ -2,7 +2,7 @@ require 'delegate'
 require MetricFu::LIB_ROOT + '/base/metric_analyzer'
 require MetricFu::LIB_ROOT + '/base/flog_analyzer'
 require MetricFu::LIB_ROOT + '/base/saikuro_analyzer'
-require MetricFu::LIB_ROOT + '/base/churn_analyzer'
+#require MetricFu::LIB_ROOT + '/base/churn_analyzer'
 require MetricFu::LIB_ROOT + '/base/reek_analyzer'
 require MetricFu::LIB_ROOT + '/base/flay_analyzer'
 
@@ -20,7 +20,7 @@ class CodeIssue < DelegateClass(Record) #DelegateClass(Ruport::Data::Record)
   include Comparable
 
   # TODO: Yuck! 'stat_value' is a column for StatAnalyzer
-  EXCLUDED_COLUMNS = FlogAnalyzer::COLUMNS + SaikuroAnalyzer::COLUMNS + ['stat_value'] + ChurnAnalyzer::COLUMNS + ReekAnalyzer.new.columns.extend(CarefulArray).carefully_remove(['reek__type_name', 'reek__comparable_message']) + FlayAnalyzer.new.columns.extend(CarefulArray).carefully_remove(['flay_matching_reason'])
+  EXCLUDED_COLUMNS = FlogAnalyzer::COLUMNS + SaikuroAnalyzer::COLUMNS + ['stat_value'] + ReekAnalyzer.new.columns.extend(CarefulArray).carefully_remove(['reek__type_name', 'reek__comparable_message']) + FlayAnalyzer.new.columns.extend(CarefulArray).carefully_remove(['flay_matching_reason'])
 
   def <=>(other)
     spaceship_for_columns(self.attributes, other)

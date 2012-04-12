@@ -5,7 +5,7 @@ module MetricFu
   # These are metrics which have been developed for the system.  Of
   # course, in order to use these metrics, their respective gems must
   # be installed on the system.
-  AVAILABLE_METRICS = [:churn, :flog, :flay, :reek,
+  AVAILABLE_METRICS = [:flog, :flay, :reek,
                        :roodi, :rcov,
                       :hotspots]
 
@@ -127,7 +127,7 @@ module MetricFu
                     :warn_cyclo => "5",
                     :error_cyclo => "7",
                     :formater => "text"}
-      @churn    = {}
+      #@churn    = {}
       @stats    = {}
       @rcov     = { :environment => 'test',
                     :test_files => ['test/**/*_test.rb',
