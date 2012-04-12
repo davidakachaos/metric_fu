@@ -1,5 +1,4 @@
 require 'rake'
-require 'ruby-debug'
 require 'yaml'
 namespace :metrics do
   desc "Generate all metrics reports"

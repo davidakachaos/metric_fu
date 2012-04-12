@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency("syntax", ">= 1.0.0")
 
   s.add_development_dependency("rspec", "= 1.3.0")
-  s.add_development_dependency("ruby-debug19")
+  #s.add_development_dependency("ruby-debug19")
   s.add_development_dependency("test-construct", ">= 1.2.0")
   s.add_development_dependency("googlecharts")
 end
